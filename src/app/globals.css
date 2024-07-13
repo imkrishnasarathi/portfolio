@@ -2,14 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
+* {
   margin: 0;
   padding: 0;
 }
 
 @layer base {
   @font-face {
-      font-family: 'Montserrat';
-      src: url('../Fonts/Montserrat-VariableFont_wght.otf');
+    font-family: 'Montserrat';
+    src: url('../Fonts/Montserrat-VariableFont_wght.otf');
   }
+}
+
+.main-content {
+  display: flex;
+}
+
+.navbar {
+  width: 64px; /* Collapsed width */
+  transition: width 0.3s;
+}
+
+.navbar-expanded {
+  width: 256px; /* Expanded width */
+}
+
+.content {
+  margin-left: 64px; /* Collapsed width of the navbar */
+  transition: margin-left 0.3s;
+}
+
+.navbar-expanded + .content {
+  margin-left: 256px; /* Expanded width of the navbar */
 }

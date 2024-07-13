@@ -15,14 +15,14 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-      <Navbar>
-        <SidebarItem icon={<House />} text="Home" isActive={true} pageHref="/" />
-        <SidebarItem icon={<CircleUser />} text="About" pageHref="/about" />
-        <SidebarItem icon={<FolderOpenDot />} text="Projects" pageHref="/projects" />
-        <SidebarItem icon={<Newspaper />} text="Articles" pageHref="/articles" />
-        <SidebarItem icon={<Mail />} text="Contact" pageHref="/contact"/>
-      </Navbar>
-      {children}
+        <Navbar>
+          <SidebarItem icon={<House />} text="Home" isActive={true} pageHref="/" />
+          <SidebarItem icon={<CircleUser />} text="About" pageHref="/about" />
+          <SidebarItem icon={<FolderOpenDot />} text="Projects" pageHref="/projects" />
+          <SidebarItem icon={<Newspaper />} text="Articles" pageHref="/articles" />
+          <SidebarItem icon={<Mail />} text="Contact" pageHref="/contact" />
+        </Navbar>
+        <main className="ml-20 transition-all duration-300">{children}</main>
       </body>
     </html>
   );
