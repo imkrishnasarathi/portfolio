@@ -16,7 +16,7 @@ const Navbar = ({ children }) => {
       onMouseEnter={() => setExpanded(true)}
       onMouseLeave={() => setExpanded(false)}
     >
-      <nav className="h-full flex flex-col bg-[#2e3047] border-r shadow-sm">
+      <nav className="h-full flex flex-col bg-[#2e3047] shadow-sm">
         <div className="p-4 pb-2 flex justify-between items-center">
           <div className="flex items-center justify-center">
             <img
