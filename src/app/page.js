@@ -26,7 +26,7 @@ export default function Home() {
           </p>
           <p className="text-lg">
             I also love{" "}
-            <Link href="/" className="text-blue-500 hover:underline">
+            <Link href="/contact" className="text-blue-500 hover:underline">
               collaborating
             </Link>{" "}
             with people through communities and open source!
