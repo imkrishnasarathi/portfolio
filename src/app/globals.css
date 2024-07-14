@@ -10,7 +10,7 @@
 @layer base {
   @font-face {
     font-family: 'Montserrat';
-    src: url('../Fonts/Montserrat-VariableFont_wght.otf');
+    src: url('../fonts/Montserrat-VariableFont_wght.otf');
   }
 }
 
