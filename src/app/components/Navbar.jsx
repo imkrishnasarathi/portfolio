@@ -10,7 +10,7 @@ const Navbar = ({ children }) => {
 
   return (
     <aside
-      className={`navbar h-screen fixed transition-all duration-150 ${
+      className={`navbar z-50 h-screen fixed transition-all duration-150 ${
         expanded ? "navbar-expanded" : ""
       }`}
       onMouseEnter={() => setExpanded(true)}

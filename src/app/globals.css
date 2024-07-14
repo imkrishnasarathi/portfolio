@@ -23,6 +23,7 @@
   transition: width 0.3s;
 }
 
+
 .navbar-expanded {
   width: 256px; /* Expanded width */
 }
@@ -34,4 +35,14 @@
 
 .navbar-expanded + .content {
   margin-left: 256px; /* Expanded width of the navbar */
+}
+
+.grid-item {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+
+.grid-item:hover {
+  transform: scale(1.05);
 }

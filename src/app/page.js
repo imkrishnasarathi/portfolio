@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import profileImage from "../../public/pic.png"; // Assuming your image is in the public folder
+import profileImage from "../../public/pic.png"; 
 
 export default function Home() {
   return (
