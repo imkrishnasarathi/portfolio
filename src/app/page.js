@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import profileImage from "../../public/pic.png"; 
+import profileImage from "../../public/pic.png";
 
 export default function Home() {
   return (
@@ -19,10 +19,10 @@ export default function Home() {
         </div>
         {/* Text Content */}
         <div className="text-center md:text-left">
-          <h1 className="text-6xl font-bold mb-2">Hey, I'm Krishna!</h1>
+          <h1 className="text-6xl font-bold mb-2">Hey, I&apos;m Krishna!</h1>
           <br />
           <p className="text-lg mb-4">
-            I'm a 14-year-old full-stack web developer and tech enthusiast!
+            I&apos;m a 14-year-old full-stack web developer and tech enthusiast!
           </p>
           <p className="text-lg">
             I also love{" "}
@@ -59,8 +59,8 @@ export default function Home() {
                 className="rounded-lg"
                 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
                 alt="JavaScript"
-                width="30"
-                height="30"
+                width={30}
+                height={30}
               />
             </div>
 
@@ -69,17 +69,18 @@ export default function Home() {
                 className="rounded-lg"
                 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
                 alt="TypeScript"
-                width="30"
-                height="30"
+                width={30}
+                height={30}
               />
             </div>
+
             <div className="text-[#150b52] py-1 px-1 mr-2 mb-2">
               <Image
                 className="rounded-lg"
                 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
                 alt="React"
-                width="30"
-                height="30"
+                width={30}
+                height={30}
               />
             </div>
 
@@ -87,9 +88,9 @@ export default function Home() {
               <Image
                 className="rounded-lg"
                 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"
-                alt="NextJS"
-                width="30"
-                height="30"
+                alt="Next.js"
+                width={30}
+                height={30}
               />
             </div>
 
@@ -98,8 +99,8 @@ export default function Home() {
                 className="rounded-lg"
                 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
                 alt="Python"
-                width="30"
-                height="30"
+                width={30}
+                height={30}
               />
             </div>
 
@@ -108,8 +109,8 @@ export default function Home() {
                 className="rounded-lg"
                 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg"
                 alt="Go"
-                width="30"
-                height="30"
+                width={30}
+                height={30}
               />
             </div>
 
@@ -118,8 +119,8 @@ export default function Home() {
                 className="rounded-lg"
                 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
                 alt="Git"
-                width="30"
-                height="30"
+                width={30}
+                height={30}
               />
             </div>
 
@@ -127,9 +128,9 @@ export default function Home() {
               <Image
                 className="rounded-lg"
                 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg"
-                alt="Tailwind"
-                width="30"
-                height="30"
+                alt="Tailwind CSS"
+                width={30}
+                height={30}
               />
             </div>
 
@@ -137,9 +138,9 @@ export default function Home() {
               <Image
                 className="rounded-lg"
                 src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg"
-                alt="NodeJS"
-                width="30"
-                height="30"
+                alt="Node.js"
+                width={30}
+                height={30}
               />
             </div>
           </div>
@@ -158,7 +159,7 @@ export default function Home() {
           </Link>
         </h1>
         <p className="text-lg">
-          Your go-to for the latest programming tutorials and insights — no
+          Your go-to for the latest programming tutorials and insights &mdash; no
           pointless talking, just the good stuff.
         </p>
       </div>
