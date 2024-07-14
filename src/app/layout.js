@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import { SidebarItem } from "./components/Navbar";
 import { House, FolderOpenDot, Mail, Newspaper } from "lucide-react";
 import Footer from "./components/Footer.jsx";
+import Head from 'next/head';
 
 const poppins = Poppins({ subsets: ["latin"], weight: "500"});
 
@@ -14,6 +15,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <Head>
+  			<link rel='icon' href='/pic.png' />
+  		</Head>
       <body className={`${poppins.className} bg-[#07142b] text-[#dcdcde]`}>
         <Navbar>
           <SidebarItem icon={<House />} text="Home" isActive={true} pageHref="/" />
