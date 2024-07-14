@@ -4,7 +4,7 @@ const ContactPage = () => {
   return (
     <div className="p-6 bg-gray-100 min-h-screen rounded-lg mb-5">
       <h1 className="text-4xl font-bold mb-4 text-gray-800 text-center">Contact Me</h1>
-      <p className="text-lg mb-4 text-gray-700">
+      <p className="text-lg mb-4 text-gray-700 text-center">
         Feel free to reach out to me through any of the following channels. I&apos;m always interested in new opportunities and collaborations.
       </p>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
