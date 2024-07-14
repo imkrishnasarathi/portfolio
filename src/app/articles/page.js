@@ -27,7 +27,7 @@ const Page = () => {
 
   return (
     <div className="p-6">
-      <h1 className="text-4xl font-bold mb-4">My Articles on Dev.to</h1>
+      <h1 className="text-4xl font-bold mb-4 text-center">My Articles on Dev.to</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 auto-rows-fr">
         {articles.map((article) => (
           <div
