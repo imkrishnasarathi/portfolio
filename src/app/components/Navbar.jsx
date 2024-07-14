@@ -10,7 +10,7 @@ const Navbar = ({ children }) => {
 
   return (
     <aside
-      className={`navbar h-screen fixed transition-all duration-300 ${
+      className={`navbar h-screen fixed transition-all duration-150 ${
         expanded ? "navbar-expanded" : ""
       }`}
       onMouseEnter={() => setExpanded(true)}
@@ -22,7 +22,7 @@ const Navbar = ({ children }) => {
             <img
               src="logo.jpg"
               alt="Krishna Sarathi Ghosh"
-              className={`shadow-md overflow-hidden transition-all shadow-blue-500/50 rounded-lg ${
+              className={`shadow-md overflow-hidden hover:shadow-md transition-all shadow-blue-500/50 rounded-lg ${
                 expanded ? "w-16 ml-3" : "w-0"
               }`}
             />
