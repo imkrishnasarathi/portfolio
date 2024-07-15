@@ -25,11 +25,23 @@ const Page = () => {
     return `col-span-${colSpan} row-span-${rowSpan}`;
   };
 
+  // Create a dummy array to fill the grid with "Coming Soon" cards
+  const dummyCards = Array.from({ length: 9 }, (_, index) => ({
+    id: index,
+    title: "Coming Soon",
+    description: "Stay tuned for more!",
+    url: "#",
+    cover_image: null, // You can optionally add a placeholder image here if needed
+  }));
+
+  // Combine real articles with dummy cards to fill the grid
+  const articlesToShow = articles.length > 0 ? articles.concat(dummyCards.slice(0, 9 - articles.length)) : dummyCards.slice(0, 9);
+
   return (
     <div className="p-6">
       <h1 className="text-4xl font-bold mb-4 text-center">My Articles on Dev.to</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 auto-rows-fr">
-        {articles.map((article) => (
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 auto-rows-fr">
+        {articlesToShow.map((article) => (
           <div
             key={article.id}
             className={`rounded-lg shadow-md p-4 bg-gray-700 flex flex-col justify-between ${getRandomSize()}`}
@@ -52,7 +64,7 @@ const Page = () => {
               rel="noopener noreferrer"
               className="inline-block px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition duration-300"
             >
-              Read More
+              {article.title !== "Coming Soon" ? "Read More" : "Stay Tuned"}
             </a>
           </div>
         ))}
