@@ -3,7 +3,7 @@ import { FaTwitter, FaGithub, FaYoutube, FaLinkedin } from 'react-icons/fa';
 
 const Footer = () => {
   return (
-    <div className='flex flex-col items-center'>
+    <div className='flex flex-col items-center mb-6'>
       <ul className='flex'>
         <li className='mx-2'>
           <a href="https://twitter.com/CodesKae" target="_blank" rel="noopener noreferrer">
