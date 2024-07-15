@@ -20,7 +20,7 @@ const Navbar = ({ children }) => {
         <div className="p-4 pb-2 flex justify-between items-center">
           <div className="flex items-center justify-center">
             <img
-              src="logo.jpg"
+              src="../favicon.ico"
               alt="Krishna Sarathi Ghosh"
               className={`shadow-md overflow-hidden hover:shadow-md transition-all shadow-blue-500/50 rounded-lg ${
                 expanded ? "w-16 ml-3" : "w-0"
