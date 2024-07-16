@@ -25,17 +25,17 @@ const Page = () => {
     return `col-span-${colSpan} row-span-${rowSpan}`;
   };
 
-  // Create a dummy array to fill the grid with "Coming Soon" cards
-  const dummyCards = Array.from({ length: 9 }, (_, index) => ({
-    id: index,
+  // Create a single "Coming Soon" card
+  const comingSoonCard = {
+    id: 'coming-soon',
     title: "Coming Soon",
     description: "Stay tuned for more!",
     url: "#",
     cover_image: null, // You can optionally add a placeholder image here if needed
-  }));
+  };
 
-  // Combine real articles with dummy cards to fill the grid
-  const articlesToShow = articles.length > 0 ? articles.concat(dummyCards.slice(0, 9 - articles.length)) : dummyCards.slice(0, 9);
+  // Combine real articles with a single "Coming Soon" card to fill the grid
+  const articlesToShow = articles.length < 9 ? articles.concat(comingSoonCard) : articles;
 
   return (
     <div className="p-6">
