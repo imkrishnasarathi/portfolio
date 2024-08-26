@@ -9,7 +9,7 @@ const Page = () => {
       try {
         const response = await fetch('https://dev.to/api/articles?username=krishnasarathi');
         const data = await response.json();
-        console.log("Fetched articles:", data); // Log the data to check if cover_image is available for all articles
+        // console.log("Fetched articles:", data); // Log the data to check if cover_image is available for all articles
         setArticles(data);
       } catch (error) {
         console.error('Error fetching articles:', error);
