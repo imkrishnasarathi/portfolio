@@ -1,18 +1,29 @@
-"use client"
-import React, { useEffect, useState } from 'react';
+"use client";
+import React, { useEffect, useState, useRef } from 'react';
+import { motion } from 'framer-motion';
+import LoadingBar from 'react-top-loading-bar';
+
+const DEFAULT_IMAGE = 'https://via.placeholder.com/400x200?text=No+Image';
 
 const Page = () => {
   const [articles, setArticles] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const loadingBarRef = useRef(null);
 
   useEffect(() => {
     const fetchArticles = async () => {
       try {
+        loadingBarRef.current.continuousStart();
+        setLoading(true);
         const response = await fetch('https://dev.to/api/articles?username=krishnasarathi');
         const data = await response.json();
-        // console.log("Fetched articles:", data); // Log the data to check if cover_image is available for all articles
+        console.log("Fetched articles:", data);
         setArticles(data);
       } catch (error) {
         console.error('Error fetching articles:', error);
+      } finally {
+        setLoading(false);
+        loadingBarRef.current.complete();
       }
     };
 
@@ -20,55 +31,58 @@ const Page = () => {
   }, []);
 
   const getRandomSize = () => {
-    const colSpan = Math.floor(Math.random() * 2) + 1; // Random number between 1 and 2
-    const rowSpan = Math.floor(Math.random() * 2) + 1; // Random number between 1 and 2
+    const colSpan = Math.floor(Math.random() * 2) + 1;
+    const rowSpan = Math.floor(Math.random() * 2) + 1;
     return `col-span-${colSpan} row-span-${rowSpan}`;
   };
 
-  // Create a single "Coming Soon" card
-  const comingSoonCard = {
-    id: 'coming-soon',
-    title: "Coming Soon",
-    description: "Stay tuned for more!",
-    url: "#",
-    cover_image: null, // You can optionally add a placeholder image here if needed
-  };
-
-  // Combine real articles with a single "Coming Soon" card to fill the grid
-  const articlesToShow = articles.length < 9 ? articles.concat(comingSoonCard) : articles;
-
   return (
-    <div className="p-6">
-      <h1 className="text-4xl font-bold mb-4 text-center">My Articles on Dev.to</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 auto-rows-fr">
-        {articlesToShow.map((article) => (
-          <div
-            key={article.id}
-            className={`rounded-lg shadow-md p-4 bg-gray-700 flex flex-col justify-between ${getRandomSize()}`}
-            style={{
-              backgroundImage: article.cover_image ? `url(${article.cover_image})` : 'none',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-            }}
-          >
-            {!article.cover_image && (
-              <div className="w-full h-48 bg-gray-200 flex items-center justify-center rounded-t-lg mb-4">
-                <span className="text-gray-500">No Image</span>
-              </div>
-            )}
-            <h2 className="text-2xl font-bold mb-2 bg-gray-800 bg-opacity-75 p-2 rounded break-words">{article.title}</h2>
-            <p className="text-lg mb-4 bg-gray-800 bg-opacity-75 p-2 rounded break-words">{article.description}</p>
-            <a
-              href={article.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition duration-300"
+    <div className="p-6 min-h-screen">
+      <LoadingBar color="#3B82F6" ref={loadingBarRef} />
+      <h1 className="text-4xl font-extrabold mb-12 text-center text-transparent bg-clip-text bg-white">
+        My Articles on Dev.to
+      </h1>
+      {loading ? (
+        <div className="flex justify-center items-center h-64">
+          <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-purple-500"></div>
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 auto-rows-fr">
+          {articles.map((article) => (
+            <motion.div
+              key={article.id}
+              className={`rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-gray-800 to-gray-900 flex flex-col justify-between ${getRandomSize()}`}
+              whileHover={{ scale: 1.05, rotate: 1 }}
+              transition={{ duration: 0.3 }}
             >
-              {article.title !== "Coming Soon" ? "Read More" : "Stay Tuned"}
-            </a>
-          </div>
-        ))}
-      </div>
+              <div className="relative">
+                <img
+                  src={article.cover_image || article.social_image || DEFAULT_IMAGE}
+                  alt={article.title}
+                  className="w-full h-64 object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-80"></div>
+              </div>
+              <div className="p-6 flex-grow">
+                <h2 className="text-2xl font-bold mb-3 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">
+                  {article.title}
+                </h2>
+                <p className="text-gray-300 mb-4">{article.description}</p>
+              </div>
+              <div className="p-6 pt-0">
+                <a
+                  href={article.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block w-full px-6 py-3 bg-gradient-to-r from-purple-500 to-indigo-600 text-white font-semibold rounded-lg text-center transition duration-300 hover:from-purple-600 hover:to-indigo-700 hover:shadow-lg hover:shadow-purple-500/50"
+                >
+                  Read Article
+                </a>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };
