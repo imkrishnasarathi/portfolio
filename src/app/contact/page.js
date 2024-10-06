@@ -39,7 +39,7 @@ const ContactPage = () => {
         Get in Touch
       </h1>
       <p className="text-xl mb-12 text-center text-gray-300 max-w-2xl mx-auto">
-        I'm always open to new opportunities and collaborations. Feel free to reach out through any of the following channels.
+        I&apos;m always open to new opportunities and collaborations. Feel free to reach out through any of the following channels.
       </p>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
         {contactMethods.map((method, index) => (
