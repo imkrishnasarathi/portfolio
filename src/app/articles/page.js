@@ -2,6 +2,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import LoadingBar from 'react-top-loading-bar';
+import Image from "next/image"
 
 const DEFAULT_IMAGE = 'https://via.placeholder.com/400x200?text=No+Image';
 
@@ -56,7 +57,7 @@ const Page = () => {
               transition={{ duration: 0.3 }}
             >
               <div className="relative">
-                <img
+                <Image
                   src={article.cover_image || article.social_image || DEFAULT_IMAGE}
                   alt={article.title}
                   className="w-full h-64 object-cover"
