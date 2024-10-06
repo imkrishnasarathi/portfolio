@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
@@ -8,6 +8,11 @@ import { usePathname } from 'next/navigation';
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
+
+  useEffect(() => {
+    // Close the menu when the route changes
+    setIsMenuOpen(false);
+  }, [pathname]);
 
   const NavLink = ({ href, children }) => {
     const isActive = pathname === href;
