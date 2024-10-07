@@ -71,6 +71,9 @@ const Navbar = () => {
               <NavLink href="/articles">Articles</NavLink>
             </li>
             <li>
+              <NavLink href="/videos">Videos</NavLink>
+            </li>
+            <li>
               <NavLink href="/contact">Contact</NavLink>
             </li>
           </ul>
