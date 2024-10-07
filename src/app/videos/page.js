@@ -4,8 +4,8 @@ import React, { useEffect, useState } from 'react';
 
 const YouTubeVideos = () => {
   const [videos, setVideos] = useState([]);
-  const API_KEY = 'AIzaSyAyq6RhOQqJJoLcgvQsZMy5eaPkLOWuLw0';
-  const channelId = 'UCvdF9H49FJVtZX3MZ480Fcg'; 
+  const API_KEY = process.env.NEXT_PUBLIC_YOUTUBE_API_KEY;
+  const channelId = process.env.NEXT_PUBLIC_CHANNEL_ID; 
   const maxResults = 20;
 
   useEffect(() => {
