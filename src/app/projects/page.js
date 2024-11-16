@@ -20,7 +20,7 @@ const projects = [
   {
     title: 'Pixel Art Canvas',
     description: "Unleash your creative side and create simple but fun pixel artworks...",
-    link: 'https://imkrishnasarathi.github.io/pixel-art-canvas/',
+    link: 'https://github.com/imkrishnasarathi/pixel-art-canvas/',
     bg: '/project/pixelart.jpg',
     stack: ["HTML", "CSS", "Vanilla JS"],
     gradient: 'from-emerald-500 to-pink-500',
