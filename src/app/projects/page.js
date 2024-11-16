@@ -17,6 +17,14 @@ const projects = [
     stack: ['Python', 'News API'],
     gradient: 'from-blue-400 to-emerald-400',
   },
+  {
+    title: 'Pixel Art Canvas',
+    description: "Unleash your creative side and create simple but fun pixel artworks...",
+    link: 'https://imkrishnasarathi.github.io/pixel-art-canvas/',
+    bg: '/project/pixelart.jpg',
+    stack: ["HTML", "CSS", "Vanilla JS"],
+    gradient: 'from-emerald-500 to-pink-500',
+  }
 ];
 
 const ProjectsPage = () => {
@@ -31,7 +39,7 @@ const ProjectsPage = () => {
           >
             {/* More visible background image */}
             <div 
-              className="absolute inset-0 opacity-20 bg-cover bg-center" 
+              className="absolute inset-0 opacity-40 bg-cover bg-center" 
               style={{backgroundImage: `url(${project.bg})`}}
             ></div>
             {/* Slightly lighter dark overlay */}
