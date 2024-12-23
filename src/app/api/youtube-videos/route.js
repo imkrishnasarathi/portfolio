@@ -1,8 +1,8 @@
 import { NextResponse } from 'next/server';
 
 export async function GET() {
-  const API_KEY = process.env.NEXT_PUBLIC_YOUTUBE_API_KEY;
-  const CHANNEL_ID = process.env.NEXT_PUBLIC_CHANNEL_ID;
+  const API_KEY = process.env.YOUTUBE_API_KEY;
+  const CHANNEL_ID = process.env.YOUTUBE_CHANNEL_ID;
   const MAX_RESULTS = 20;
 
   try {
