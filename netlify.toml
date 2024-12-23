@@ -6,8 +6,8 @@
   package = "@netlify/plugin-nextjs"
 
 [build.environment]
-  NEXT_PUBLIC_CHANNEL_ID = ""
-  NEXT_PUBLIC_YOUTUBE_API_KEY = ""
+  NEXT_PUBLIC_CHANNEL_ID = "UCvdF9H49FJVtZX3MZ480Fcg"
+  NEXT_PUBLIC_YOUTUBE_API_KEY = "AIzaSyAyq6RhOQqJJoLcgvQsZMy5eaPkLOWuLw0"
 
 # Disable secrets scanning for specific paths
 [secrets]
