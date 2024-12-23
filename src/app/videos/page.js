@@ -1,28 +1,23 @@
 "use client";
-
 import React, { useEffect, useState } from 'react';
 
 const YouTubeVideos = () => {
   const [videos, setVideos] = useState([]);
-  const API_KEY = process.env.NEXT_PUBLIC_YOUTUBE_API_KEY;
-  const channelId = process.env.NEXT_PUBLIC_CHANNEL_ID; 
-  const maxResults = 20;
 
   useEffect(() => {
     const fetchVideos = async () => {
       try {
-        const response = await fetch(
-          `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&channelId=${channelId}&part=snippet,id&order=date&maxResults=${maxResults}`
-        );
+        // Call your API route instead of directly using the YouTube API
+        const response = await fetch('/api/youtube-videos');
         const data = await response.json();
-        setVideos(data.items);
+        setVideos(data.items || []);
       } catch (error) {
         console.error('Error fetching videos:', error);
       }
     };
 
     fetchVideos();
-  }, [API_KEY, channelId, maxResults]);
+  }, []);
 
   // Filter out videos with the title "The 404 Podcast"
   const filteredVideos = videos.filter(video => video.snippet.title !== "404: Podcast Not Found");
