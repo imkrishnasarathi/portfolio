@@ -1,0 +1,14 @@
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+[build.environment]
+  NEXT_PUBLIC_CHANNEL_ID = ""
+  NEXT_PUBLIC_YOUTUBE_API_KEY = ""
+
+# Disable secrets scanning for specific paths
+[secrets]
+  SECRETS_SCAN_OMIT_PATHS = ".netlify/.next/cache/webpack/*, .netlify/.next/server/*, .netlify/.next/static/*, .netlify/functions-internal/*, .next/*"
