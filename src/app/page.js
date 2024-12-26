@@ -12,8 +12,8 @@ export default function Home() {
           <Image
             src={profileImage}
             alt="Profile Image"
-            width={500}
-            height={500}
+            width={400}
+            height={400}
             className="rounded-3xl"
           />
         </div>
