@@ -47,18 +47,16 @@ const Page = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-80"></div>
               </div>
               <div className="p-6 flex-grow">
-                <h2 className="text-2xl font-bold mb-3 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">
+                <h2 className="text-2xl font-bold mb-3 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-300">
                   {article.title}
                 </h2>
-                {/* Assuming you want to add a description, you can include it in your articles.js */}
-                <p className="text-gray-300 mb-4">{article.description || "No description available."}</p>
               </div>
               <div className="p-6 pt-0">
                 <a
-                  href="#"
+                  href={`${article.url}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block w-full px-6 py-3 bg-gradient-to-r from-purple-500 to-indigo-600 text-white font-semibold rounded-lg text-center transition duration-300 hover:from-purple-600 hover:to-indigo-700 hover:shadow-lg hover:shadow-purple-500/50"
+                  className="inline-block w-full px-6 py-3 bg-gradient-to-r from-purple-400 to-indigo-500 text-white font-semibold rounded-lg text-center transition duration-300 hover:from-purple-600 hover:to-indigo-700 hover:shadow-lg hover:shadow-purple-500/50"
                 >
                   Read Article
                 </a>
