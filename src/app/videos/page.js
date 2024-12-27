@@ -1,8 +1,5 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import axios from "axios";
-
-axios.defaults.headers.post["Content-Type"] = "application/json; charset=utf-8";
 
 const YouTubeVideos = () => {
   const [videos, setVideos] = useState([]);
