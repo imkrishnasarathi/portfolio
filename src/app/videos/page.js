@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import he from "he";
 
 const YouTubeVideos = () => {
   const [videos, setVideos] = useState([]);
@@ -42,8 +43,8 @@ const YouTubeVideos = () => {
                 <iframe
                   className="w-full h-64"
                   src={`https://www.youtube.com/embed/${video.id.videoId}`}
-                  title={video.snippet.title}
-                  frameBorder="0"
+                  title={he.decode(video.snippet.title)}
+                  style={{ border: "none" }}
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                 ></iframe>
