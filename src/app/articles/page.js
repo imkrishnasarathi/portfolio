@@ -20,9 +20,7 @@ const Page = () => {
   return (
     <div className="p-6 min-h-screen">
       <LoadingBar color="#3B82F6" ref={loadingBarRef} />
-      <h1 className="text-4xl font-extrabold mb-12 text-center text-transparent bg-clip-text bg-hite">
-        My Articles
-      </h1>
+      <h1 className="text-4xl font-bold mb-8 text-center">My Articles</h1>
       {loading ? (
         <div className="flex justify-center items-center h-64">
           <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-purple-500"></div>
