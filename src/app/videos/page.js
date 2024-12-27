@@ -40,7 +40,6 @@ const YouTubeVideos = () => {
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredVideos.map((video) => (
-            console.log(video.snippet.title),
             <div
               key={video.id.videoId}
               className="bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105"
@@ -49,7 +48,7 @@ const YouTubeVideos = () => {
                 <iframe
                   className="w-full h-64"
                   src={`https://www.youtube.com/embed/${video.id.videoId}`}
-                  title={decodeHtml(video.snippet.title)}
+                  title={video.snippet.title}
                   style={{ border: "none" }}
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
@@ -57,7 +56,7 @@ const YouTubeVideos = () => {
               </div>
               <div className="p-4">
                 <h2 className="text-2xl font-semibold mb-2">
-                  {video.snippet.title}
+                  {decodeHtml(video.snippet.title)}
                 </h2>
                 <p className="text-gray-300">{video.snippet.description}</p>
               </div>
