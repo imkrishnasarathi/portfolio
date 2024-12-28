@@ -13,7 +13,7 @@ export default function Home() {
             src={profileImage}
             alt="Profile Image"
             width={400}
-            height={400}
+            height={400}a
             className="rounded-3xl mr-20"
           />
         </div>
@@ -36,40 +36,54 @@ export default function Home() {
 
       <div className="flex flex-col gap-8 p-20">
         <div className="bg-gradient-to-br from-blue-500 via-blue-600 to-blue-700 rounded-lg shadow-lg p-10 transition-transform duration-300 ease-in-out hover:scale-[1.05]">
-          <h1 className="text-3xl font-bold text-white mb-4">About Me</h1>
-          <h2 className="text-2xl font-semibold text-white mb-2">What I do:</h2>
-          <ul className="list-disc pl-6 text-white space-y-2 mb-6">
-            <li>High School Student</li>
-            <li>Full Stack Web Developer</li>
-            <li>Open Source Contributor</li>
-            <li>Technical Writer</li>
-            <li>Exploring the world of AI</li>
-          </ul>
-          <h2 className="text-2xl font-semibold text-white mb-2">Tech Stack</h2>
-          <div className="flex flex-wrap gap-4">
-            {[
-              "typescript",
-              "csharp",
-              "python",
-              "react",
-              "nextjs",
-              "go",
-              "git",
-              "tailwindcss",
-              "nodejs",
-              "postgresql",
-            ].map((tech) => (
-              <div key={tech} className="bg-white p-2 rounded-lg shadow-md">
-                <Image
-                  src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech}/${tech}-original.svg`}
-                  alt={tech}
-                  width={30}
-                  height={30}
-                />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+              <h1 className="text-3xl font-bold text-white mb-4">About Me</h1>
+              <h2 className="text-2xl font-semibold text-white mb-6">What I do:</h2>
+              <ul className="list-disc pl-6 text-white space-y-2 mb-6">
+                <li>High School Student</li>
+                <li>Full Stack Web Developer</li>
+                <li>Open Source Contributor</li>
+                <li>Technical Writer</li>
+                <li>Exploring the world of AI</li>
+              </ul>
+            </div>
+            <div>
+              <h2 className="text-2xl font-semibold text-white mb-8 text-center">Tech Stack</h2>
+              <div className="grid grid-cols-3 sm:grid-cols-4 gap-4 justify-items-center">
+                {[
+                  "typescript",
+                  "csharp",
+                  "c",
+                  "python",
+                  "react",
+                  "nextjs",
+                  "go",
+                  "tailwindcss",
+                  "nodejs",
+                  "postgresql",
+                  "mongodb",
+                  "git",
+                  "github",
+                  "docker",
+                  "figma",
+                  "linux"
+                ].map((tech) => (
+                  <div key={tech} className="bg-white p-2 rounded-lg shadow-md transform transition-transform duration-300 hover:scale-110">
+                    <Image
+                      src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech}/${tech}-original.svg`}
+                      alt={tech}
+                      width={30}
+                      height={30}
+                    />
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
           </div>
         </div>
+
+
 
         {/* Two Split Cards */}
         <div className="flex flex-col lg:flex-row gap-8">
