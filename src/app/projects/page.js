@@ -24,6 +24,14 @@ const projects = [
     bg: '/project/pixelart.jpg',
     stack: ["HTML", "CSS", "Vanilla JS"],
     gradient: 'from-emerald-500 to-pink-500',
+  },
+  {
+    title: 'DineFit',
+    description: "DineFit is a smart, user-friendly web application designed to help individuals discover recipes that align with their unique diet preferences. The platform empowers users to receive real, cookable recipe suggestions sourced from trusted online databases, based on their preferences, likes and dislikes!",
+    link: 'https://github.com/imkrishnasarathi/dinefit',
+    bg: '/project/dinefit.jpeg',
+    stack: ["React", "Tailwind CSS"],
+    gradient: 'from-orange-400 to-rose-500'
   }
 ];
 
