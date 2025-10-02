@@ -5,6 +5,7 @@ const projects = [
     title: 'PleasantWeb',
     description: 'A smart browser extension designed to enhance your online experience by alerting you of unsuitable content, and ensuring your online experience is safe and pleasant!',
     link: 'https://github.com/imkrishnasarathi/pleasantweb/',
+    demo: null, 
     bg: '/project/pleasantweb.png',
     stack: ['HTML', 'CSS', 'Vanilla JS'],
     gradient: 'from-purple-500 to-pink-500',
@@ -13,6 +14,7 @@ const projects = [
     title: 'News For My Bro',
     description: 'A simple python program which reads out the latest news for you! Made for educational purposes and feel free to tinker with it!',
     link: 'https://github.com/imkrishnasarathi/News-For-My-Bro/',
+    demo: null, 
     bg: '/project/news-for-my-bro.png',
     stack: ['Python', 'News API'],
     gradient: 'from-blue-400 to-emerald-400',
@@ -21,6 +23,7 @@ const projects = [
     title: 'Pixel Art Canvas',
     description: "Unleash your creative side and create simple but fun pixel artworks...",
     link: 'https://github.com/imkrishnasarathi/pixel-art-canvas/',
+    demo: 'http://imkrishnasarathi.github.io/pixel-art-canvas/',
     bg: '/project/pixelart.jpg',
     stack: ["HTML", "CSS", "Vanilla JS"],
     gradient: 'from-emerald-500 to-pink-500',
@@ -29,6 +32,7 @@ const projects = [
     title: 'DineFit',
     description: "DineFit is a smart, user-friendly web application designed to help individuals discover recipes that align with their unique diet preferences. The platform empowers users to receive real, cookable recipe suggestions sourced from trusted online databases, based on their preferences, likes and dislikes!",
     link: 'https://github.com/imkrishnasarathi/dinefit',
+    demo: 'https://dine-fit.vercel.app', 
     bg: '/project/dinefit.jpeg',
     stack: ["React", "Tailwind CSS"],
     gradient: 'from-orange-400 to-rose-500'
@@ -45,12 +49,10 @@ const ProjectsPage = () => {
             key={index}
             className={`relative overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl transform hover:scale-105 bg-gradient-to-br ${project.gradient}`}
           >
-            {/* More visible background image */}
             <div 
               className="absolute inset-0 opacity-40 bg-cover bg-center" 
               style={{backgroundImage: `url(${project.bg})`}}
             ></div>
-            {/* Slightly lighter dark overlay */}
             <div className="absolute inset-0 bg-black opacity-30"></div>
             <div className="relative p-6 h-full flex flex-col justify-between z-10 text-center">
               <div>
@@ -62,7 +64,7 @@ const ProjectsPage = () => {
                   ))}
                 </div>
               </div>
-              <div className="mt-4">
+              <div className="mt-4 flex justify-center gap-3">
                 <a 
                   href={project.link} 
                   target="_blank" 
@@ -71,6 +73,24 @@ const ProjectsPage = () => {
                 >
                   View Project →
                 </a>
+
+                {project.demo ? (
+                  <a 
+                    href={project.demo} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-block bg-purple-600 text-white font-medium py-2 px-4 rounded transition-colors duration-300 hover:bg-purple-700"
+                  >
+                    Live Demo 🚀
+                  </a>
+                ) : (
+                  <button 
+                    disabled
+                    className="inline-block bg-gray-500 text-gray-200 font-medium py-2 px-4 rounded opacity-70 cursor-not-allowed"
+                  >
+                    Demo Unavailable
+                  </button>
+                )}
               </div>
             </div>
           </div>
