@@ -26,9 +26,10 @@ const YouTubeVideos = () => {
 
     fetchVideos();
   }, []);
-  const filteredVideos = videos.filter(
-    (video) => video.snippet.title !== "404: Podcast Not Found"
-  );
+
+  const filteredVideos = videos
+    .filter((video) => video.snippet.title !== "404: Podcast Not Found")
+    .slice(0, 10);
 
   return (
     <div className="p-6 min-h-screen bg-gray-900 text-white">
@@ -38,31 +39,46 @@ const YouTubeVideos = () => {
           <div className="animate-spin rounded-full h-32 w-32 border-t-4 border-b-4 border-purple-500"></div>
         </div>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredVideos.map((video) => (
-            <div
-              key={video.id.videoId}
-              className="bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105"
+        <>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {filteredVideos.map((video) => (
+              <div
+                key={video.id.videoId}
+                className="bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105"
+              >
+                <div className="relative">
+                  <iframe
+                    className="w-full h-64"
+                    src={`https://www.youtube.com/embed/${video.id.videoId}`}
+                    title={video.snippet.title}
+                    style={{ border: "none" }}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+                </div>
+                <div className="p-4">
+                  <h2 className="text-2xl font-semibold mb-2">
+                    {decodeHtml(video.snippet.title)}
+                  </h2>
+                  <p className="text-gray-300 line-clamp-3">
+                    {video.snippet.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="flex justify-center mt-10">
+            <a
+              href="https://www.youtube.com/@imkrishnasarathi"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-3 rounded-xl bg-purple-600 hover:bg-purple-700 transition-colors duration-300 text-white font-semibold shadow-lg"
             >
-              <div className="relative">
-                <iframe
-                  className="w-full h-64"
-                  src={`https://www.youtube.com/embed/${video.id.videoId}`}
-                  title={video.snippet.title}
-                  style={{ border: "none" }}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
-              </div>
-              <div className="p-4">
-                <h2 className="text-2xl font-semibold mb-2">
-                  {decodeHtml(video.snippet.title)}
-                </h2>
-                <p className="text-gray-300">{video.snippet.description}</p>
-              </div>
-            </div>
-          ))}
-        </div>
+              Check Out More
+            </a>
+          </div>
+        </>
       )}
     </div>
   );
